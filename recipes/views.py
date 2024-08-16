@@ -53,7 +53,6 @@ class CategoryListCreateView(generics.ListCreateAPIView):
                 'data': paginated_response.data['results']
             }, status=status.HTTP_200_OK)
         
-        # If pagination is not applied
         serializer = self.get_serializer(queryset, many=True)
         return Response({
             'message': 'Category retrieved successfully.',
@@ -84,7 +83,6 @@ class DifficultyListCreateView(generics.ListCreateAPIView):
                 'data': paginated_response.data['results']
             }, status=status.HTTP_200_OK)
         
-        # If pagination is not applied
         serializer = self.get_serializer(queryset, many=True)
         return Response({
             'message': 'Category retrieved successfully.',
@@ -137,7 +135,6 @@ class RecipesListCreateView(generics.ListCreateAPIView):
                 'data': paginated_response.data['results']
             }, status=status.HTTP_200_OK)
         
-        # If pagination is not applied
         serializer = self.get_serializer(queryset, many=True)
         return Response({
             'message': 'Recipes retrieved successfully.',
@@ -178,7 +175,7 @@ class RecipesListCreateView(generics.ListCreateAPIView):
 class RecipesDetailCreateView(generics.ListCreateAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipesSerializer
-    permission_classes = [IsAuthenticated]  # Ensure the user is authenticated
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         recipe_id = request.query_params.get('recipe_id')
@@ -190,7 +187,6 @@ class RecipesDetailCreateView(generics.ListCreateAPIView):
                 "status": "Error",
             }, status=status.HTTP_400_BAD_REQUEST)
 
-        # Retrieve the recipe details by recipe_id
         queryset = Recipes.objects.filter(recipe_id=recipe_id).first()
 
         if not queryset:
@@ -200,7 +196,6 @@ class RecipesDetailCreateView(generics.ListCreateAPIView):
                 "status": "Error",
             }, status=status.HTTP_404_NOT_FOUND)
 
-        # Serialize the recipe data
         serializer = self.get_serializer(queryset)
         response_data = {
             "data": serializer.data,
@@ -228,11 +223,6 @@ class MyFavListCreateView(generics.ListCreateAPIView):
         
         if userId:
             queryset = queryset.filter(user_id__exact=userId)
-            
-        # if sort_by == 'desc':
-        #     queryset = queryset.order_by('-recipe_name')
-        # else:
-        #     queryset = queryset.order_by('recipe_name') 
         
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -247,14 +237,12 @@ class MyFavListCreateView(generics.ListCreateAPIView):
                 'data': paginated_response.data['results']
             }, status=status.HTTP_200_OK)
         
-        # If pagination is not applied
         serializer = self.get_serializer(queryset, many=True)
         return Response({
             'message': 'Recipes retrieved successfully.',
             'status': status.HTTP_200_OK,
             'data': serializer.data
         }, status=status.HTTP_200_OK)
-        
         
 # DELETE RECIPES
 class RecipesDeleteView(generics.DestroyAPIView):
@@ -265,6 +253,7 @@ class RecipesDeleteView(generics.DestroyAPIView):
 class RecipesRetrieveUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipesSerializer
+    permission_classes = [IsAuthenticated]
     
     def update(self, request, **kwargs):
         partial = kwargs.pop('partial', False)
@@ -350,7 +339,6 @@ class RecipesUpdateFavoriteView(generics.RetrieveUpdateAPIView):
         user_id = request.user
         recipe = instance
         
-        # Update or create FavoriteFood record
         favorite_record, created = FavoriteFood.objects.update_or_create(
             user=user_id,
             recipe=recipe,
@@ -358,12 +346,10 @@ class RecipesUpdateFavoriteView(generics.RetrieveUpdateAPIView):
         )
 
         if not created:
-            # If the record was not created, update it with the new is_favorite value
             favorite_record.is_favorite = is_favorite
             favorite_record.save()
             
         if request.data['is_favorite'] == False:
-            # Delete the FavoriteFood record if it exists
             FavoriteFood.objects.filter(user=user_id, recipe=recipe).delete()
             return Response({
                 'message': 'Recipe updated and favorite status removed successfully.',
