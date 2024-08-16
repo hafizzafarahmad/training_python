@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "99c0b772-faea-4911-b1e4-7683dd42af1d",
+		"name": "Training Python",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12319990"
+	},
+	"item": [
+		{
+			"name": "Master",
+			"item": [
+				{
+					"name": "Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNzc2NjM4LCJpYXQiOjE3MjM2OTAyMzgsImp0aSI6ImQzYzcxNGMwYWU0YzQwMmY5MTIxMDlmMTY5YjljZDhiIiwidXNlcl9pZCI6MX0.rQpkISkdO_Y6YMrMvzs0HLhRBopxmNAx8JoJzWQqKAQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/master/category/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"master",
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "bata",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Difficulty",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNzc2NjM4LCJpYXQiOjE3MjM2OTAyMzgsImp0aSI6ImQzYzcxNGMwYWU0YzQwMmY5MTIxMDlmMTY5YjljZDhiIiwidXNlcl9pZCI6MX0.rQpkISkdO_Y6YMrMvzs0HLhRBopxmNAx8JoJzWQqKAQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/master/difficulty/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"master",
+								"difficulty",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "bata",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzNzc2NjM4LCJpYXQiOjE3MjM2OTAyMzgsImp0aSI6ImQzYzcxNGMwYWU0YzQwMmY5MTIxMDlmMTY5YjljZDhiIiwidXNlcl9pZCI6MX0.rQpkISkdO_Y6YMrMvzs0HLhRBopxmNAx8JoJzWQqKAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes?userId=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "bata",
+							"disabled": true
+						},
+						{
+							"key": "categoryId",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "levelId",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recipes Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODc1MjExLCJpYXQiOjE3MjM3ODg4MTEsImp0aSI6Ijc2NTdhZmIyMmE2MzQ4ZWZhMmQ0MGQ4YjVhMmMzNzQyIiwidXNlcl9pZCI6MX0.fNIalLDXEwyzYpgIf27JzaFUKoQqD1qZBtmZjrdzmq4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/detail?recipe_id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "bata",
+							"disabled": true
+						},
+						{
+							"key": "categoryId",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "recipe_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fav Recipes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODYzMzkxLCJpYXQiOjE3MjM3NzY5OTEsImp0aSI6ImUzZTVjZGNhZjI3MTRjMzY4NzAwZGNlNjQ4ZWU4YTFkIiwidXNlcl9pZCI6MX0.CUU39UkwPfYGQq9vjznIziybOtyG1dqjMl1YfBC9kXM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/favorite/?userId=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"favorite",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "bata",
+							"disabled": true
+						},
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "levelId",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"hafiz\",\n    \"password\" : \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"hafizzafar\",\n    \"password\" : \"12345\",\n    \"email\" : \"ahmad@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/sign-up/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"sign-up",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"hafiz\",\n    \"password\" : \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/signin/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"signin",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMzc3NDAzMywiaWF0IjoxNzIzNjg3NjMzLCJqdGkiOiIyYWFkYTk4ODVjYzQ0NDU5YmQxM2UyZmNjY2NkYjMwZiIsInVzZXJfaWQiOjF9.olV3drNNhYw6btTh74dqmIpkdvh60_MNoz0VA0o77Oc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recipes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODYxNzYyLCJpYXQiOjE3MjM3NzUzNjIsImp0aSI6ImMzMTE4M2RmMjk3MTRhODA4MzViNzE2ZjYyMTRmZDcyIiwidXNlcl9pZCI6Mn0.ThPhRm7HjCE3_nhnkJN0t4d1XZoUMuVhgbp77JweCog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "recipe_name",
+							"value": "Klepon",
+							"type": "text"
+						},
+						{
+							"key": "image_filename",
+							"type": "file",
+							"src": "/Users/cbn/Downloads/image_2024-08-12_16-52-17.png"
+						},
+						{
+							"key": "time_cook",
+							"value": "29",
+							"type": "text"
+						},
+						{
+							"key": "ingridient",
+							"value": "ingridient",
+							"type": "text"
+						},
+						{
+							"key": "how_to_cook",
+							"value": "how_to_cook",
+							"type": "text"
+						},
+						{
+							"key": "is_deleted",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recipes",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "recipe_name",
+							"value": "Ayam Sayur",
+							"type": "text"
+						},
+						{
+							"key": "image_filename",
+							"type": "file",
+							"src": "/Users/cbn/Downloads/image_2024-08-12_16-52-17.png"
+						},
+						{
+							"key": "time_cook",
+							"value": "29",
+							"type": "text"
+						},
+						{
+							"key": "ingridient",
+							"value": "ingridient",
+							"type": "text"
+						},
+						{
+							"key": "how_to_cook",
+							"value": "how_to_cook",
+							"type": "text"
+						},
+						{
+							"key": "is_deleted",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/update/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"update",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recipes Favorite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIzODYxOTkwLCJpYXQiOjE3MjM3NzU1OTAsImp0aSI6IjI4ZjA5YThjNGE5ODQ3YTRiNjY1Mzg3YmM1ODFhN2FkIiwidXNlcl9pZCI6MX0.9HHrNOOTKgr7wfV2qbk32uB1lxcscuaQIrrikrNVTTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "recipe_name",
+							"value": "Ayam Sayur",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image_filename",
+							"type": "file",
+							"src": "/Users/cbn/Downloads/image_2024-08-12_16-52-17.png",
+							"disabled": true
+						},
+						{
+							"key": "time_cook",
+							"value": "29",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingridient",
+							"value": "ingridient",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "how_to_cook",
+							"value": "how_to_cook",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "is_deleted",
+							"value": "false",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "is_favorite",
+							"value": "True",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "recipe_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/favorite/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"favorite",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recipes",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"recipe_id\": 1,\n    \"recipe_name\": \"recipe_name\",\n    \"image_filename\": \"image_filename\",\n    \"time_cook\": 29,\n    \"ingridient\": \"ingridient\",\n    \"how_to_cook\": \"how_to_cook\",\n    \"is_deleted\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
